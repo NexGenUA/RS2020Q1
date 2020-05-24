@@ -12,7 +12,7 @@
 [Link your YouTube video](https://youtu.be/ZQy3ngWGzlY)
 
 ### Evaluation criteria:
-  1. [] You've got your presentation on *Reveal* and a transcript of your speech in English: **+20 points**
-  2. [] You've done a preliminary rehearsal of your presentation with your mentor: **+20 points**
-  3. [] The recording of your speech is uploaded to YouTube: **+60 points**
-  4. [] Your speech is clear, slides are visible in the video: **+20 points**
+  1. [ ] You've got your presentation on *Reveal* and a transcript of your speech in English: **+20 points**
+  2. [ ] You've done a preliminary rehearsal of your presentation with your mentor: **+20 points**
+  3. [ ] The recording of your speech is uploaded to YouTube: **+60 points**
+  4. [ ] Your speech is clear, slides are visible in the video: **+20 points**
