@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Presentation</title><link href="f81ef6d9d4e3b86f8a3e.style.css" rel="stylesheet"></head><body><div class="reveal"><div class="slides"><section data-markdown><textarea data-template>
+        <img src="assets/fonts/92d47c14c04f9cc555827430762465c6.svg" alt="JWT" class="logo-jwt">
+          <p class="first-slide-p">
+            Introduction to JSON Web Tokens
+          </p>
+          <p class="first-slide-p">
+            What is JSON Web Token?
+          </p>
+          <p class="first-slide-p">
+            JSON Web Tokens are an open, industry standard <a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a> method for representing claims securely between two parties.
+          </p>
+        </textarea></section><section data-markdown><textarea data-template>
+        <p class="first-slide-p">When should you use JSON Web Tokens?</p>
+        <p class="fragment" data-fragment-index="1">Authorization</p>
+        <p class="fragment" data-fragment-index="2">Information Exchange</p>
+        </textarea></section><section data-markdown><textarea data-template>
+        <p class="first-slide-p">What is the JSON Web Token structure?</p>
+        </textarea></section><section data-markdown><textarea data-template>
+          <ul>
+            <li>Header</li>
+            <li>Payload</li>
+            <li>Signature</li>
+          </ul>
+          <p>
+            Therefore, a JWT typically looks like the following.
+          </p>
+          xxxxx.yyyyy.zzzzz
+        </textarea></section><section data-markdown><textarea data-template>
+          #### Header
+          <pre>
+            <code class="hljs" data-trim data-noescape data-line-numbers="1-4">
+          {
+            "alg": "HS256",
+            "typ": "JWT"
+          }
+            </code>
+          </pre>
+        </textarea></section><section data-markdown><textarea data-template>
+          ### Payload:
+          <ul>
+            <li>Registered</li>
+            <li>Public</li>
+            <li>Private</li>
+          </ul>
+          <pre>
+            <code class="hljs" data-trim data-noescape data-line-numbers="1-5">
+              {
+                "sub": "1234567890",
+                "name": "John Doe",
+                "admin": true
+              }
+            </code>
+          </pre>
+        </textarea></section><section data-markdown><textarea data-template>
+          ### Signature:
+          <pre>
+            <code class="hljs" data-trim data-noescape data-line-numbers="1-5">
+              HMACSHA256(
+                base64UrlEncode(header) + "." +
+                base64UrlEncode(payload),
+                secret)}
+            </code>
+          </pre>
+        </textarea></section><section data-markdown><textarea data-template>
+        <p class="first-slide-p">How do JSON Web Tokens work?</p>
+        </textarea></section><section data-markdown><textarea data-template>
+### Authorization :
+              Authorization: Bearer <token>
+        </token></textarea></section><section data-markdown><textarea data-template>
+          ### Why should we use JSON Web Tokens?
+        </textarea></section><section data-markdown><textarea data-template>
+          ### Thank you
+        </textarea></section></div></div><script src="f81ef6d9d4e3b86f8a3e.main.js"></script></body></html>
