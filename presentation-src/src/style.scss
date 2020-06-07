@@ -1,0 +1,23 @@
+@import '../node_modules/reveal.js/css/reveal.css';
+@import '../node_modules/reveal.js/lib/css/monokai.css';
+@import '../node_modules/reveal.js/css/theme/league.css';
+
+.reveal {
+
+  & .logo-jwt {
+    width: 80px;
+    display: block;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    margin: 0 auto;
+  }
+
+  & .first-slide-p {
+    font-size: 30px;
+
+    & a {
+      font-weight: 900;
+    }
+  }
+}
