@@ -1,1 +1,26 @@
-<p>auth-window works!</p>
+<form name="auth" class="auth-form">
+  <label for="login" class="label">
+    <span class="span-login">Enter login: </span>
+    <input
+      [(ngModel)]="loginField"
+      type="text"
+      name="login"
+      id="login"
+      placeholder="login"
+    />
+  </label>
+  <label for="password" class="label">
+    <span class="span-password">Enter password: </span>
+    <input
+      [(ngModel)]="passwordField"
+      type="text"
+      name="password"
+      id="password"
+      placeholder="password"
+    />
+  </label>
+  <div class="buttons">
+    <button class="register" (click)="register()">Register</button>
+    <button class="login" (click)="login()">Login</button>
+  </div>
+</form>
