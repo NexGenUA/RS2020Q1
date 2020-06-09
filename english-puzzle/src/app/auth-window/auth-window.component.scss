@@ -3,6 +3,14 @@
   flex-direction: column;
   width: 300px;
 
+  & .input {
+    outline: none;
+
+    &.ng-touched.ng-invalid {
+      border: 2px solid orangered;
+    }
+  }
+
   & .label {
     display: flex;
     justify-content: space-between;

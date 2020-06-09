@@ -1,16 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  form: FormGroup;
+export class AppComponent {
   title: 'english-puzzle';
-
-  ngOnInit(): void {
-    this.form = new FormGroup({});
-  }
 }

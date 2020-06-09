@@ -1,26 +1,66 @@
-<form name="auth" class="auth-form">
-  <label for="login" class="label">
-    <span class="span-login">Enter login: </span>
-    <input
-      [(ngModel)]="loginField"
-      type="text"
-      name="login"
-      id="login"
-      placeholder="login"
-    />
-  </label>
-  <label for="password" class="label">
-    <span class="span-password">Enter password: </span>
-    <input
-      [(ngModel)]="passwordField"
-      type="text"
-      name="password"
-      id="password"
-      placeholder="password"
-    />
-  </label>
-  <div class="buttons">
-    <button class="register" (click)="register()">Register</button>
-    <button class="login" (click)="login()">Login</button>
+<div class="forms-container">
+  <div class="switch-form">
+    <label for="reg">
+      <input type="radio" id="reg" name="switch-form" (change)="isLog = !$event.target.checked">
+      <span class="radio-span">Registration</span>
+    </label>
+    <label for="log">
+      <input type="radio" id="log" name="switch-form" (change)="isLog = $event.target.checked" checked>
+      <span class="radio-span">Login</span>
+    </label>
   </div>
-</form>
+  <form *ngIf="isLog" name="auth" class="auth-form" [formGroup]="formLogin" (submit)="login()">
+    <label for="login" class="label">
+      <span class="span-login">Enter login: </span>
+      <input
+        formControlName="login"
+        type="text"
+        name="login"
+        id="login"
+        placeholder="login"
+        class="input"
+      />
+    </label>
+    <label for="password" class="label">
+      <span class="span-password">Enter password: </span>
+      <input
+        formControlName="password"
+        type="text"
+        name="password"
+        id="password"
+        placeholder="password"
+        class="input"
+      />
+    </label>
+    <div class="buttons">
+      <button class="login" type="submit" [disabled]="formLogin.invalid">Login</button>
+    </div>
+  </form>
+  <form *ngIf="!isLog" name="auth" class="auth-form" [formGroup]="formRegister" (submit)="login()">
+    <label for="login-reg" class="label">
+      <span class="span-login">Enter login: </span>
+      <input
+        formControlName="login"
+        type="text"
+        name="login"
+        id="login-reg"
+        placeholder="login"
+        class="input"
+      />
+    </label>
+    <label for="password-reg" class="label">
+      <span class="span-password">Enter password: </span>
+      <input
+        formControlName="password"
+        type="text"
+        name="password"
+        id="password-reg"
+        placeholder="password"
+        class="input"
+      />
+    </label>
+    <div class="buttons">
+      <button class="login" type="submit" [disabled]="formRegister.invalid">Registration</button>
+    </div>
+  </form>
+</div>
