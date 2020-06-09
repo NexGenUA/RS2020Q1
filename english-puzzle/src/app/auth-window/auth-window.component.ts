@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 const REGEXP_EMAIL = /^(?:[a-z0-9_\.\-])+\@(?:(?:[a-z0-9\-])+\.)+(?:[a-z0-9]{2,4})+$/i;
-const REGEXP_PASSWORD = /([a-z])+([A-Z])+([+-_@$!%*?&#.,;:[]{}])+/;
+const REGEXP_PASSWORD = /([a-z])+([A-Z])+([+-_@$!%*?&#.,;:[]{}])+/i;
 
 @Component({
   selector: 'app-auth-window',
