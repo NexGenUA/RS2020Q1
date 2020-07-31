@@ -1,0 +1,278 @@
+$color1: rgb(70, 70, 70);
+$color2: rgb(120, 120, 120);
+$icon-color: rgb(245, 245, 245);
+$color-border: rgb(150, 150, 150);
+$color-border-2: rgb(180, 180, 180);
+$hover-color: rgb(54, 187, 222);
+$brand-color: rgb(54, 187, 222);
+$icon-color-background: rgb(54, 187, 222);
+$hover-background: rgb(240, 240, 240);
+$selected-background: rgb(220, 220, 220);
+$icon-hover-background: rgb(234, 117, 49);
+$remove-color: rgb(234, 117, 49);
+$box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+  0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+.start-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-image: url(../../assets/background-start-page.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+
+  &.close {
+    transform: scale(0) translateY(-100vh);
+  }
+
+  & .start-game {
+    -webkit-appearance: none;
+    background-color: rgb(125, 207, 239);
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 10px 5px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+.user-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.select-list {
+  display: flex;
+  color: $color1;
+
+  &.page {
+    margin-right: auto;
+  }
+
+  & .text-block {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  & .options {
+    position: relative;
+    user-select: none;
+    border-bottom: 1px solid $color-border-2;
+  }
+
+  &.level {
+    margin-right: 30px;
+  }
+
+  & .current-option-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    height: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 100px;
+
+    &:hover {
+      & .arrow_down {
+        color: $hover-color;
+      }
+    }
+
+    & .current-option {
+    }
+  }
+
+  & .available-options {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.1s linear;
+    transform: scaleY(0);
+    transform-origin: top;
+    box-shadow: $box-shadow;
+
+    &.show {
+      transform: scaleY(1);
+      visibility: visible;
+    }
+
+    & .option-item {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      height: 30px;
+      cursor: pointer;
+      color: $brand-color;
+
+      &.selected {
+        background-color: $selected-background;
+      }
+      &:hover {
+        background-color: $hover-background;
+      }
+    }
+
+    & .title {
+      background-color: rgba(0, 0, 0, 0.03);
+      color: rgba(0, 0, 0, 0.3);
+      padding-left: 10px;
+      line-height: 30px;
+    }
+  }
+}
+
+.icons-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  & .material-icons {
+    font-size: 30px;
+    color: $icon-color;
+    background-color: $icon-color-background;
+    box-shadow: $box-shadow;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      background-color: $icon-hover-background;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+
+  .user-action {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    width: 120px;
+    box-shadow: $box-shadow;
+    line-height: 35px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.1s linear;
+    background-color: white;
+
+    &.show-user {
+      transform: scaleY(1);
+    }
+
+    & .action {
+      padding-left: 10px;
+      color: $brand-color;
+
+      &:hover {
+        background-color: $hover-background;
+      }
+
+      &.delete {
+        color: $remove-color;
+      }
+    }
+  }
+
+  .user-info-name {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 0 30px 0 60px;
+
+  & .words-phrase {
+    max-width: 1200px;
+    width: 100%;
+    height: 40px;
+    box-shadow: $box-shadow;
+    margin-top: 30px;
+  }
+}
+
+.game-area {
+  max-width: 1200px;
+  box-shadow: $box-shadow;
+}
+
+.group-words {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+
+  & .canvas-item {
+    height: inherit;
+
+    &:not(:first-child) {
+      margin-left: -10px;
+    }
+    &:last-child {
+      margin-right: -10px;
+    }
+  }
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~normalize-scss/sass/normalize/import-now";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

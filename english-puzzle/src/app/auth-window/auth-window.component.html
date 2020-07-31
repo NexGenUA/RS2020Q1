@@ -1,64 +1,94 @@
 <div class="forms-container">
   <div class="switch-form">
-    <label for="reg">
-      <input type="radio" id="reg" name="switch-form" (change)="isLog = !$event.target.checked">
+    <label class="label-item" for="reg">
+      <input class="radio" type="radio" id="reg" name="switch-form" (change)="isLog = !$event.target.checked">
       <span class="radio-span">Registration</span>
     </label>
-    <label for="log">
-      <input type="radio" id="log" name="switch-form" (change)="isLog = $event.target.checked" checked>
+    <label class="label-item" for="log">
+      <input class="radio" type="radio" id="log" name="switch-form" (change)="isLog = $event.target.checked" checked>
       <span class="radio-span">Login</span>
     </label>
   </div>
-  <form *ngIf="isLog" name="auth" class="auth-form" [formGroup]="formLogin" (submit)="login()">
-    <label for="login" class="label">
-      <span class="span-login">Enter login: </span>
-      <input
-        formControlName="login"
-        type="text"
-        name="login"
-        id="login"
-        placeholder="login"
-        class="input"
-      />
-    </label>
-    <label for="password" class="label">
-      <span class="span-password">Enter password: </span>
-      <input
-        formControlName="password"
-        type="text"
-        name="password"
-        id="password"
-        placeholder="password"
-        class="input"
-      />
-    </label>
+  <form *ngIf="isLog" name="auth" class="form auth-form" [formGroup]="formLogin" (submit)="login()">
+    <div class="wrap-login">
+      <label for="login" class="label">
+        <span class="span-login">Login(e-mail): </span>
+        <input
+          formControlName="email"
+          type="text"
+          name="login"
+          id="login"
+          placeholder="login"
+          class="input"
+        />
+      </label>
+    </div>
+    <div class="wrap-password">
+      <label for="password" class="label">
+        <span class="span-password">Password: </span>
+        <input
+          formControlName="password"
+          type="text"
+          name="password"
+          id="password"
+          placeholder="password"
+          class="input"
+        />
+      </label>
+      <div *ngIf="errorLogin" class="error">
+        <span class="span-error">Connection error</span>
+      </div>
+    </div>
     <div class="buttons">
       <button class="login" type="submit" [disabled]="formLogin.invalid">Login</button>
     </div>
   </form>
-  <form *ngIf="!isLog" name="auth" class="auth-form" [formGroup]="formRegister" (submit)="login()">
-    <label for="login-reg" class="label">
-      <span class="span-login">Enter login: </span>
-      <input
-        formControlName="login"
-        type="text"
-        name="login"
-        id="login-reg"
-        placeholder="login"
-        class="input"
-      />
-    </label>
-    <label for="password-reg" class="label">
-      <span class="span-password">Enter password: </span>
-      <input
-        formControlName="password"
-        type="text"
-        name="password"
-        id="password-reg"
-        placeholder="password"
-        class="input"
-      />
-    </label>
+  <form *ngIf="!isLog" name="reg" class="form reg-form" [formGroup]="formRegister" (submit)="register()">
+    <div class="wrap-login">
+      <label for="login-reg" class="label">
+        <span class="span-login">Login(e-mail): </span>
+        <input
+          formControlName="email"
+          type="text"
+          name="login"
+          id="login-reg"
+          placeholder="login"
+          class="input"
+        />
+      </label>
+      <small
+        *ngIf="formRegister.get('email')?.errors?.required
+            && formRegister.get('email')?.touched"
+      >Field can not be empty</small>
+      <small
+        *ngIf="formRegister.get('email')?.errors?.pattern
+            && formRegister.get('email')?.touched"
+      >E-mail must be format mymail@mydomain.com</small>
+    </div>
+    <div class="wrap-password">
+      <label for="password-reg" class="label">
+        <span class="span-password">Password: </span>
+        <input
+          formControlName="password"
+          type="text"
+          name="password"
+          id="password-reg"
+          placeholder="password"
+          class="input"
+        />
+      </label>
+      <div *ngIf="errorReg" class="error">
+        <span class="span-error">Connection error</span>
+      </div>
+      <small
+        *ngIf="formRegister.get('password')?.errors?.required
+            && formRegister.get('password')?.touched"
+      >Field can not be empty</small>
+      <small
+        *ngIf="formRegister.get('password')?.errors?.pattern
+            && formRegister.get('password')?.touched"
+      >Password must be minimum 8 characters and  contain one uppercase, one lowercase letter, one number digit and one special character {{symbols}}</small>
+    </div>
     <div class="buttons">
       <button class="login" type="submit" [disabled]="formRegister.invalid">Registration</button>
     </div>

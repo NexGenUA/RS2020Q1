@@ -1,2 +1,2 @@
-<h1>Start English-Puzzle</h1>
-<app-auth-window></app-auth-window>
+<app-auth-window *ngIf="!isAuthorized"></app-auth-window>
+<app-main-game *ngIf="isAuthorized"></app-main-game>

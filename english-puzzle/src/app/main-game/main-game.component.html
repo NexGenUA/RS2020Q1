@@ -1,0 +1,112 @@
+<div *ngIf="isStartPage" [class.close]="hide" class="start-page" id="start-page">
+  <button class="start-game" id="start-game" (click)="hideStartPage()">start game</button>
+</div>
+
+<div class="user-panel">
+  <div class="select-list level">
+    <div class="level text-block">
+      <span class="level text-block_item">Level</span>
+    </div>
+    <div class="options level">
+      <div class="current-option-block" (click)="isShowLevelList = !isShowLevelList">
+        <span class="current-option">{{ level }}</span>
+        <i class="arrow_down material-icons">keyboard_arrow_down</i>
+      </div>
+      <div [class.show]="isShowLevelList" class="available-options levels" (click)="changeLevel($event)">
+        <small class="title">Choose level</small>
+        <span [class.selected]="level === 1" class="option-item" data-level="1">1</span>
+        <span [class.selected]="level === 2" class="option-item" data-level="2">2</span>
+        <span [class.selected]="level === 3" class="option-item" data-level="3">3</span>
+        <span [class.selected]="level === 4" class="option-item" data-level="4">4</span>
+        <span [class.selected]="level === 5" class="option-item" data-level="5">5</span>
+        <span [class.selected]="level === 6" class="option-item" data-level="6">6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="select-list page">
+    <div class="page text-block">
+      <span class="page text-block_item">Page</span>
+    </div>
+    <div class="options page">
+      <div class="current-option-block" (click)="isShowPageList = !isShowPageList">
+        <span class="current-option">{{ page }}</span>
+        <i class="arrow_down material-icons">keyboard_arrow_down</i>
+      </div>
+      <div [class.show]="isShowPageList" class="available-options pages" (click)="changePage($event)">
+        <small class="title">Choose page</small>
+        <span [class.selected]="page === 1" class="option-item" data-page="1">1</span>
+        <span [class.selected]="page === 2" class="option-item" data-page="2">2</span>
+        <span [class.selected]="page === 3" class="option-item" data-page="3">3</span>
+        <span [class.selected]="page === 4" class="option-item" data-page="4">4</span>
+        <span [class.selected]="page === 5" class="option-item" data-page="5">5</span>
+        <span [class.selected]="page === 6" class="option-item" data-page="6">6</span>
+        <span [class.selected]="page === 7" class="option-item" data-page="7">7</span>
+        <span [class.selected]="page === 8" class="option-item" data-page="8">8</span>
+        <span [class.selected]="page === 9" class="option-item" data-page="9">9</span>
+        <span [class.selected]="page === 10" class="option-item" data-page="10">10</span>
+        <span [class.selected]="page === 11" class="option-item" data-page="11">11</span>
+        <span [class.selected]="page === 12" class="option-item" data-page="12">12</span>
+        <span [class.selected]="page === 13" class="option-item" data-page="13">13</span>
+        <span [class.selected]="page === 14" class="option-item" data-page="14">14</span>
+        <span [class.selected]="page === 15" class="option-item" data-page="15">15</span>
+        <span [class.selected]="page === 16" class="option-item" data-page="16">16</span>
+        <span [class.selected]="page === 17" class="option-item" data-page="17">17</span>
+        <span [class.selected]="page === 18" class="option-item" data-page="18">18</span>
+        <span [class.selected]="page === 19" class="option-item" data-page="19">19</span>
+        <span [class.selected]="page === 20" class="option-item" data-page="20">20</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="icons-bar">
+    <span class="material-icons">volume_up</span>
+    <span class="material-icons">text_snippet</span>
+    <span class="material-icons">queue_music</span>
+    <span class="material-icons">photo</span>
+  </div>
+  <div class="user-info">
+    <div class="user-info-name" (click)="isShowUserBlock = !isShowUserBlock">
+      <span>{{ userName }}</span>
+      <i class="arrow_down material-icons">keyboard_arrow_down</i>
+    </div>
+    <div [class.show-user]="isShowUserBlock" class="user-action">
+      <span class="action">Logout</span>
+      <span class="action delete">Delete user</span>
+    </div>
+  </div>
+</div>
+<main class="main" *ngIf="false">
+  <div class="game-area" #gameArea>
+  </div>
+  <div class="words-phrase" [innerHTML]="currentPhrase" cdkDrag>
+  </div>
+</main>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+    <button mat-raised-button cdkDrag><mat-icon>volume_up</mat-icon></button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+  <button mat-stroked-button>Basic</button>
+  <mat-divider></mat-divider>
+    <button mat-stroked-button color="primary">Primary</button>
+    <button mat-stroked-button color="accent">Accent</button>
+    <button mat-stroked-button color="warn">Warn</button>
+    <button mat-stroked-button disabled>Disabled</button>
+  <mat-icon>volume_up</mat-icon>
+</form>
