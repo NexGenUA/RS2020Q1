@@ -1,6 +1,6 @@
 # Movie-Search Task
 
-### Демо приложения: [http://nexgenua-movie-search.herokuapp.com/](https://nexgenua-movie-search.herokuapp.com/)
+### Демо приложения: [http://nexgenua-movie-search.herokuapp.com/](http://nexgenua-movie-search.herokuapp.com/)
 
 + Для запуска приложения прейти по ссылке выше и скачать либо склонировать репозиторий, перейти в папку с приложением, установить [**Node.js**](https://nodejs.org/en/) не ниже 12 версии, набрать команду:
 
